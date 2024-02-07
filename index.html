@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Relatório</h1>
+    <div id="grafico"></div>
+
+    <script>
+        // Converter o JSON do gráfico de volta para um objeto
+        var figura = {{ grafico_json | safe }};
+
+        // Renderizar o gráfico no elemento com ID "grafico"
+        Plotly.newPlot('grafico', figura.data, figura.layout);
+    </script>
+</body>
+</html>
